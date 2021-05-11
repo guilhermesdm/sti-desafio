@@ -1,38 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(#ff7f00, #ffbb00);
+}
+
 .App {
-  text-align: center;
+    text-align: center;
+    padding-top: 120px;
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+    align-items: center;
+    display: flex;
+    outline: none;
+    border: 0;
+    padding: 12px;
+    width: 85%;
+    font-size: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button {
+    align-items: center;
+    background-color: white;
+    border: 0;
+    padding: 12px;
+    font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.title {
+    font-size: 60px;
+    font-weight: bolder;
+    color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.line {
+    border-top: 2px solid rgba(255, 255, 255, 0.678);
+    margin-top: 30px;
+}
+
+.capitais {
+    font-weight: 600;
+    font-size: 40px;
+    width: 85%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: left;
+
+}
+
+table {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+    padding: 20px;
+    display: inline;
+}
+
+td {
+    padding: 5px;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+th {
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+}
+
+.display {
+    color: rgba(0, 0, 0, 0.726);
+    background-color: #fff3e4;
 }

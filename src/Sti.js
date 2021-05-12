@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { fetchCidade } from './service';
-import { Search } from 'react-feather';
+import { Search, ArrowUpCircle, ArrowDownCircle, X } from 'react-feather';
+import swal from 'sweetalert';
 
 function Sti() {
     const [capitais, setCapitais] = useState([])
@@ -12,7 +13,9 @@ function Sti() {
             const data = await fetchCidade(pesquisa)
             setCidade(data)
         } catch (error) {
-
+            swal({
+                title: "Cidade inexistente"
+            })
         }
         setPesquisa('')
     }
@@ -35,21 +38,25 @@ function Sti() {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
+    const closeButton = () => {
+        setCidade('')
+    }
+
+
     return (
         <div className="App">
             <h1 className="title">Previsão do tempo</h1>
             <div className="display">
                 {cidade && (
                     <>
-                        <p>{cidade.city.name} - {cidade.city.country === 'BR' ? 'Brasil' : cidade.city.country} </p>
-                        <p>{(cidade.list[0].main.temp_min).toFixed()}</p>
-                        <p>{(cidade.list[0].main.temp_max).toFixed()}</p>
-                        <p>{maiusculo(cidade.list[0].weather[0].description)}</p>
-                        <p>Humidade {cidade.list[0].main.humidity}%</p>
-                        <p>Sensação {(cidade.list[0].main.feels_like).toFixed()}</p>
-                        <p>{(cidade.list[0].main.temp).toFixed()}°C</p>
-                        <p>Vento {((cidade.list[0].wind.speed) * 3.6).toFixed(1)} km/h</p>
-
+                        <button className="close" onClick={closeButton}><X color="orange"/></button>
+                        <p className="city">{cidade.city.name} - {cidade.city.country === 'BR' ? 'Brasil' : cidade.city.country} </p>
+                        <h1>{(cidade.list[0].main.temp).toFixed()}°C {maiusculo(cidade.list[0].weather[0].description)}</h1>
+                        <p className="carac"><ArrowDownCircle size="16" color="orange"/> {(cidade.list[0].main.temp_min).toFixed()}° 
+                        <ArrowUpCircle size="16" color="orange" /> {(cidade.list[0].main.temp_max).toFixed()}° 
+                        Sensação {(cidade.list[0].main.feels_like).toFixed()}°C </p>
+                        <p className="carac2">Vento {((cidade.list[0].wind.speed) * 3.6).toFixed(1)}km/h
+                        Humidade {cidade.list[0].main.humidity}%</p>
                     </>
                 )}
             </div>

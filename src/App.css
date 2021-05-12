@@ -7,13 +7,13 @@
 }
 
 body {
-    height: 100vh;
+    height: 105vh;
     background: linear-gradient(#ff7f00, #ffbb00);
 }
 
 .App {
     text-align: center;
-    padding-top: 120px;
+    padding-top: 20px;
     width: 90%;
     max-width: 600px;
     margin-left: auto;
@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 input {
@@ -47,7 +47,8 @@ button {
 
 
 .title {
-    font-size: 60px;
+    margin-bottom: 20px;
+    font-size: 55px;
     font-weight: bolder;
     color: white;
 }
@@ -90,5 +91,36 @@ th {
 
 .display {
     color: rgba(0, 0, 0, 0.726);
+    background-color: #fff3e4;
+}
+
+.city {
+    font: bolder;
+    display: flex;
+    padding-left: 40px;
+}
+
+.display h1 {
+    display: flex;
+    padding-left: 40px;
+}
+
+.carac {
+    display: flex;
+    padding-top: 30px;
+    padding-left: 40px;
+    align-items: center;
+}
+
+.carac2 {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-bottom: 30px;
+}
+
+.close {
+    margin-left: 550px;
     background-color: #fff3e4;
 }
